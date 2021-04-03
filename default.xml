@@ -11,7 +11,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build/make" name="platform/build" groups="pdk" >
+  <project path="build/make" name="platform_build" groups="pdk" remote="legendrom" revision="11">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -21,7 +21,7 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="legendrom" revision="11">>
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -836,6 +836,8 @@
 
   <!-- LegendROM stuff -->	
   <project path="vendor/legend_aosp" name="vendor_legend_aosp" remote="legendrom" revision="11" />
-	
+  <include name="snippets/lineage.xml" />
+  <include name="snippets/remove.xml" />
+  <include name="snippets/legendrom.xml" />	
 	
 </manifest>

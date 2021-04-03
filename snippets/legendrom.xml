@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github/StormBreakerOSS"
+           fetch="https://github.com/StormBreakerOSS"
+           revision="refs/heads/reikon" />
+
+  <remote  name="github/StormBreaker-project"
+           fetch="https://github.com/StormBreaker-project"
+           revision="refs/heads/reikon" />
+
+  <remote name="gitlab/StormBreaker-project"
+          fetch="https://gitlab.com/stormbreaker-project"
+          revision="refs/heads/reikon" />
+
+
+  <!-- External -->
+  <!--project path="external/tinycompress" name="platform_external_tinycompress" remote="github/StormBreakerOSS" />
+
+  < Framework >
+  <project path="frameworks/av" name="platform_frameworks_av" remote="github/StormBreakerOSS" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="github/StormBreakerOSS" />
+
+  < General >
+  <project path="vendor/stormbreaker" name="platform_vendor_stormbreaker" remote="github/StormBreakerOSS" /-->
+
+  <!-- HALs -->
+  <project path="hardware/qcom-caf/common" name="platform_hardware_qcom-caf_common" remote="github/StormBreakerOSS" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- for AOSP sdm845 and sm8150, we override os_pickup.mk -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+  </project>
+
+  <project path="hardware/qcom-caf/msm8996/audio" name="platform_hardware_qcom_audio" revision="reikon-8996" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/msm8996/display" name="platform_hardware_qcom_display" revision="reikon-8996" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/msm8996/media" name="platform_hardware_qcom_media" revision="reikon-8996" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/msm8998/audio" name="platform_hardware_qcom_audio" revision="reikon-8998" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/msm8998/display" name="platform_hardware_qcom_display" revision="reikon-8998" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/msm8998/media" name="platform_hardware_qcom_media" revision="reikon-8998" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sdm845/audio" name="platform_hardware_qcom_audio" revision="reikon-845" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sdm845/display" name="platform_hardware_qcom_display" revision="reikon-845" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sdm845/media" name="platform_hardware_qcom_media" revision="reikon-845" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="platform_hardware_qcom_audio" revision="reikon-8150" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8150/display" name="platform_hardware_qcom_display" revision="reikon-8150" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8150/media" name="platform_hardware_qcom_media" revision="reikon-8150" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8250/audio" name="platform_hardware_qcom_audio" revision="reikon-8250" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8250/display" name="platform_hardware_qcom_display" revision="reikon-8250" remote="github/StormBreakerOSS" />
+  <project path="hardware/qcom-caf/sm8250/media" name="platform_hardware_qcom_media" revision="reikon-8250" remote="github/StormBreakerOSS" />
+
+  <!-- Hardware -->
+  <!--project path="hardware/libhardware" name="platform_hardware_libhardware" remote="github/StormBreakerOSS" /-->
+
+  <!-- Packages -->
+  <project path="packages/apps/CarrierSettings" name="platform_packages_apps_CarrierSettings" remote="github/StormBreakerOSS" />
+
+</manifest>
+
